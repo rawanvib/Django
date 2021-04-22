@@ -1,0 +1,49 @@
+h1{
+  text-align: center;
+}
+body{
+  background: #489070;
+  image: no-repeat;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+img{
+  height:75%;
+  width: 50%;
+  align-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 10px solid red;
+  border-radius: 20px;
+}
+p{
+  text-decoration: underline;
+}
+
+/* descedent selector*/
+ul li{
+  color: #8c7023;
+}
+
+
+/* attribute selector*/
+input[type="submit"]{
+  background: #FF9F1C;
+  color: white;
+  height: 50px;
+  width: 100px;
+  margin: 15px;
+  font-size: 1.5em;
+  border-radius: 25px;
+}
+
+.styleform{
+  border: 25px groove green;
+}
+#stylepara{
+  border:20px solid #bdc3c7;
+  padding:20px;
+  width: 700px;
+  margin: 20px auto;
+  line-height: 30px;
+}

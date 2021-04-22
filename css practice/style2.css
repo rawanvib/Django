@@ -1,0 +1,10 @@
+body{
+  background: cyan;
+}
+h1{
+  text-align: center;
+  color:red;
+}
+hr{
+  width:20px;
+}

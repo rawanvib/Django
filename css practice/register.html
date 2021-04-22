@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <h1>Registration form</h1>
+    <form class="styleform" action="/home/webwerks/Desktop/django/css practice/thankyou.html" method="post">
+      <label for="name">Enter name:</label><br>
+      <input id='name' type="text" name="name" pattern=".{4,20}" title="min 5 and max 20 characters" placeholder="enter name" required>
+<!--title can be blank-it will tell match provided format or something user must be aware when entering right name-->
+      <br>
+      <label for="mail">Enter email id:</label><br>
+      <input id="mail" type="email" name="email" placeholder="enter your email" required><br>
+
+      <label for="age">Age:</label><br>
+      <input id="age" type="text" name="text" placeholder="enter your age" required><br>
+      <br>
+      <h2>Have registered here before:</h2>
+      <label for="yes">Yes</label>
+      <input id"yes" type="radio" name="registered" value="yes">
+
+      <label for="no">No</label>
+      <input id="no" type="radio" name="registered" value="no">
+      <br>
+      <h2>Genre of book:</h2>
+      <select class="" name="booktype" multiple>
+        <option value="fiction">fiction</option>
+        <option value="novel">novel</option>
+        <option value="narrative">narrative</option>
+        <option value="scifi">Science fiction</option>
+      </select>
+      <h2>Number of books you want to purchase:</h2>
+      <select class="" name="number">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+
+      <h2>Buy a book or rent :</h2>
+      <input type="checkbox" name="buy" value="purchase">Purchase
+      <input type="checkbox" name="buy" value="rent">Rent
+      <input type="checkbox" name="buy" value="notsure">Not sure
+
+      <h2>Your preference</h2>
+      <textarea name="preference" rows="8" cols="80"></textarea>
+      <br>
+      <input type="submit" name="" value="register">
+    </form>
+    <!--file:///home/webwerks/Desktop/django/html%20practice/thankyou.html?name=Vibha&email=vibharawan12%40gmail.com&text=22&registered=yes&booktype=novel&number=2&buy=purchase&preference=-->
+  </body>
+</html>
