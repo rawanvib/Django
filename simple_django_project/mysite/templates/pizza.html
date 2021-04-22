@@ -1,0 +1,17 @@
+{% load static %}
+
+<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+  <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+    <figure>
+      {% for p in pizza %}
+      <a href="{% url 'app:show_detail' p.id %}"><img src="{{MEDIA_URL}}{{p.image.url}}" alt="Image" class="img tm-gallery-img" /></a>
+      <figcaption>
+        <h4 class="tm-gallery-title">{{p.title}}</h4>
+        <p class="tm-gallery-description">{{p.description}}</p>
+        <p class="tm-gallery-price">${{p.price}}</p>
+      </figcaption>
+      {% endfor %}
+    </figure>
+  </article>
+</div>

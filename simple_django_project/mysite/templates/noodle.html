@@ -1,0 +1,17 @@
+{% load static %}
+
+<div id="tm-gallery-page-noodle" class="tm-gallery-page hidden">
+  
+  <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+    <figure>
+      {% for n in noodle %}
+      <img src="{{MEDIA_ROOT}}.{{n.image.url}}" alt="Image" class="img tm-gallery-img" />
+      <figcaption>
+        <h4 class="tm-gallery-title">{{n.title}}</h4>
+        <p class="tm-gallery-description">{{n.description}}/p>
+        <p class="tm-gallery-price">${{n.price}}</p>
+      </figcaption>
+      {% endfor %}
+    </figure>
+  </article>
+</div>

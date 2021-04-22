@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple House Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+</head>
+<!--
+
+Simple House
+
+https://templatemo.com/tm-539-simple-house
+
+-->
+<body>
+
+
+		<main>
+			{% include 'header.html'%}
+			<header class="row tm-welcome-section">
+
+				<h2 class="col-12 text-center tm-section-title">Welcome to Simple House</h2>
+
+			</header>
+
+			<div class="tm-paging-links">
+				<nav>
+					<ul>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link active">Pizza</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 pizz-->
+				{% include 'pizza.html'%}
+				<!-- gallery page 1 -->
+
+
+				<!-- gallery page 2 -->
+				{% include 'salad.html' %}
+				 <!-- gallery page 2 -->
+
+				<!-- gallery page 3 -->
+				{% include 'noodle.html' %}
+				<!-- gallery page 3 -->
+			</div>
+
+		</main>
+
+
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/parallax.min.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</body>
+</html>
