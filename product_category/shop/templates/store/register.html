@@ -1,0 +1,106 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style>
+
+    body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display:table;
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+    color:white;
+}
+form {
+
+    display:table;/* shrinks to fit content */
+    margin:auto;
+    border
+}
+input[type=text], input[type=password] {
+ width: 100%;
+ padding: 15px;
+ margin: 5px 0 22px 0;
+ border: none;
+ background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+ background-color: #ddd;
+ outline: none;
+}
+
+.form_login{
+  border:50px;
+}
+
+
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body style="background-image: url('{% static 'img/simple-house-01.jpg' %}')">
+
+    <div class="parallax-window" data-parallax="scroll" >
+      <div class="container">
+        <nav class="col-md-6 col-12 tm-nav">
+          <ul class="tm-nav-ul">
+            <li class="tm-nav-li"><a href="{% url 'store:index' %}" class="tm-nav-link active">Home</a></li>
+          </ul>
+        </nav>
+        {% block form%}
+
+      <form class="form_login" action="/store" method="post" height='300'>
+        {% csrf_token %}
+
+        <div class="form-group ">
+          <label for="fname" class="form-text text-muted">Enter first name</label>
+          <input type="text" class="form-control" id="fname" aria-describedby="emailHelp" name="first_name" placeholder="Enter first name">
+        </div>
+        <div class="form-group ">
+          <label for="lname" class="form-text text-muted">Enter last name</label>
+          <input type="text" class="form-control" id="lname" aria-describedby="emailHelp" name='last_name' placeholder="Enter last name">
+        </div>
+        <div class="form-group ">
+          <label for="uname" class="form-text text-muted">Enter username</label>
+          <input type="text" class="form-control" id="uname" aria-describedby="emailHelp" name="username" placeholder="Enter username">
+        </div>
+          <div class="form-group form-text text-muted">
+            <label for="exampleInputEmail1" class="text-muted">Email address</label>
+            <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="Password1" class="text-muted">Password</label>
+            <input type="password" class="form-control" id="Password1" name="password1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="Password2" class="text-muted">Password again</label>
+            <input type="password" class="form-control" id="Password2" name="password2" placeholder="Confirm password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+{% endblock %}
+      <div class="container" >
+       {%if messages %}
+
+      			 {% for message in messages %}
+                      <div class="alert alert-{{ message.tags }} alert-dismissible alert-fixed" role="alert" >
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+
+      {% endif %}
+    </div>
+    </div>
+  </body>
+</html>

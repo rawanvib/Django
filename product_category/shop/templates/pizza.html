@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="row tm-gallery">
+  <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+      <figure>
+
+        {% for item in category %}
+        <a href="{{ item.get_absolute_url }}"><img src="{{MEDIA_URL}}{{item.image.url}}" alt="Image" class="img tm-gallery-img" /></a>
+        <figcaption>
+          <h4 class="tm-gallery-title">{{item.title}}</h4>
+          <p class="tm-gallery-description">{{item.description}}</p>
+          <p class="tm-gallery-price">${{item.price}}</p>
+        </figcaption>
+        {% endfor %}
+      </figure>
+    </article>
+</div>
