@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block titlebar%}
+  <title>dashboard | categories_detail</title>
+{%endblock%}
+
+{% block page-head %}
+   Detail about the category
+{% endblock %}
+
+{% block breadcrumb %}
+   starter page
+{% endblock %}
+
+
+
+<h2>{{ category.name }}</h2>
+<p>&emsp;{{ category.description }}</p>

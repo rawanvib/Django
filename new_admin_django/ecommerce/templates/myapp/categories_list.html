@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block titlebar%}
+  <title>dashboard | categories</title>
+{%endblock%}
+
+{% block page-head %}
+   List of categories
+{% endblock %}
+
+{% block breadcrumb %}
+   Category list
+{% endblock %}
+
+
+
+
+
+
+
+{% block wrapper%}
+
+<!--<div class="bs-example">-->
+<!--    &lt;!&ndash; Button HTML (to Trigger Modal) &ndash;&gt;-->
+<!--    <a href="#myModal" role="button" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>-->
+
+    <!-- Modal HTML -->
+
+<!--</div>-->
+
+<section class="content">
+	  <div class="row">
+	    <div class="col-12">
+	      <div class="card">
+	        <div class="card-header">
+
+
+				<div class="col-12">
+				   <a href="{% url 'myapp:add_category' %}" class=" btn btn-primary float-right">
+				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				  <span><strong>Add+ </strong></span>
+				</a>
+			  </div>
+	            <h3 class="card-title">user table</h3>
+
+	            </div>
+	        <!-- /.card-header -->
+	        <div class="card-body">
+
+	          <table id="example1" class="table table-bordered table-hover">
+	            <thead>
+	            <tr>
+                    <th>Name</th>
+	                <th>View</th>
+	                <th>Edit</th>
+	                <th>Delete</th>
+	 			</tr>
+	            </thead>
+	            <tbody>
+                    {% for category in all_categories %}
+                    <tr>
+                    <td>{{ category.name }}</td>
+                    <td><a href="{% url "myapp:detail_category" category.id %}">view</a></td>
+                    <td><a href="{% url "myapp:edit_category" category.id %}">edit</a></td>
+                    <td><a href="{% url "myapp:delete_category" category.id %}">delete</a></td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+	        <!-- /.card-body -->
+	      </div>
+	      <!-- /.card -->
+	  </div>
+	<!--col-12-->
+		</div>
+	  </div>
+</section>
+
+{% endblock %}
+
+{%block extra%}
+<!-- DataTables -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.js' %}"></script>
+<script>
+
+{% endblock %}
+

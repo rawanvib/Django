@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block titlebar%}
+  <title>dashboard | categories_add</title>
+{%endblock%}
+
+{% block page-head %}
+   Add new category
+{% endblock %}
+
+{% block breadcrumb %}
+   starter page
+{% endblock %}
+{% block wrapper%}
+<h2>Edit Category</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
