@@ -22,45 +22,37 @@
 			<header class="row tm-welcome-section">
 				<h2 class="col-12 text-center tm-section-title">Welcome to Simple House</h2>
 			</header>
+			{%if messages %}
+			{% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible alert-fixed" role="alert" >
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+			{% endif %}
 
 			<div class="tm-paging-links">
 				<nav>
 						<ul>
-							{% for c in categories %}
-									<li class="tm-paging-item"><a href="{% url 'store:product_list' c.pk %}" class="tm-paging-link">{{c.name}}</a></li>
+
+							{% for category in categories %}
+									<li class="tm-paging-item"><a href="{% url 'store:category_list' category.pk %}" class="tm-paging-link">{{category.name}}</a></li>
 							{% endfor %}
-							<!-- <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Pizza</a></li>
-							<li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
-							<li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li> -->
+
 						</ul>
 
 				</nav>
-			</div>
 
+			</div>
+			{% block upper %}
+
+			{% endblock %}
 			<br>
 
 
 			<!-- Gallery -->
 
-			<div class="container-fluid">
-				<div class="row tm-gallery">
-				  <div id="tm-gallery-page-pizza" class="tm-gallery-page">
-				<div class="row mx-auto">
-					{% for product in products %}
-						<div class="card mx-auto mb-3" style="width=15rem;">
-							<div class="col-lg-4 col-sm-6">
-					           <a href="detail-{{product.id}}"><img class="imgchange" src="{{product.imageURL}}" alt=""></a>
-					      </div>
-							<div class="card-body">
-								<h5 class="card title" >{{product.name}}</h5>
-								<h3>${{product.price}}</h3>
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+			{% include 'pizza.html' %}
 
 				<!-- <div class="row tm-gallery">
 				  <div id="tm-gallery-page-pizza" class="tm-gallery-page">

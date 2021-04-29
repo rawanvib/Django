@@ -1,0 +1,18 @@
+{% extends 'store/index.html' %}
+
+{% block upper %}
+<center>
+<!--    {% if search %}-->
+    <h1>You searched for....{{ search }}</h1>
+    {% for product in products %}
+
+    {% empty %}
+
+    <h1>No search for {{search }} found</h1>
+    {% endfor %}
+<!--    {% else %}-->
+    <h1>Sorry...</h1>
+<!--    {% endif %}-->
+
+</center>
+{% endblock %}

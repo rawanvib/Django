@@ -24,6 +24,20 @@
                 <li class="tm-nav-li"><a href="{% url 'store:register' %}" class="tm-nav-link">Register</a></li>
                 <li class="tm-nav-li"><a href="{% url 'store:login' %}" class="tm-nav-link">Login</a></li>
               {% endif %}
+              </ul>
+            </nav>
+
+            <br>
+          <nav>
+            <ul>
+              <div class="container" style="width:250px;">
+					<form method="POST" action="{% url 'store:search_dish' %}">
+						{% csrf_token %}
+						<input type="search" class="form-control me-2" placeholder="Search" aria-label="Search" name="searched">
+						<button class="btn btn-outline-secondary" type="submit">Search</button>
+					</form>
+                </div>
+
             </ul>
           </nav>
         </div>
