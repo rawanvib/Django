@@ -19,7 +19,7 @@
 
 <div class="col-md-12">
     <div class="card card-primary">
-      <form method="post" action="{% url 'custom_admin:UserUpdate' id %}">
+      <form method="post" action="{% url 'myapp:UserUpdate' id %}">
            <div class="card-body">
                {% csrf_token %}
 
@@ -106,7 +106,8 @@
            </div>
             <div class="card-footer">
 	       <button type="submit" class="btn btn-primary">submit</button>
-                <a class="btn btn-default" href="../">cancle</a>
+                <a class="btn btn-default" href="../">cancel</a>
+                <a class="btn btn-default" href="{% url 'myapp:UserChangePsw' %}">change password</a>
             </div>
        </form>
     </div>

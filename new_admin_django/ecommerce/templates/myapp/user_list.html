@@ -22,20 +22,11 @@
 
 
 {% block wrapper%}
-
-
-
-
-
-
-
-
 <section class="content">
 	  <div class="row">
 	    <div class="col-12">
 	      <div class="card">
 	        <div class="card-header">
-
 				<div class="col-12">
 				   <a href="{% url 'myapp:UserAdd' %}" class=" btn btn-primary float-right">
 				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -43,22 +34,18 @@
 				</a>
 			  </div>
 	          <h3 class="card-title">user table</h3>
-
 	        </div>
 	        <!-- /.card-header -->
 	        <div class="card-body">
-
 	          <table id="example1" class="table table-bordered table-hover">
 	            <thead>
 	            <tr>
-                    <th>id</th>
+					<th>id</th>
 	              <th>Email</th>
 	              <th>full name</th>
 	              <th>date joined</th>
 				  <th>is active</th>
-
 				  <th>Edit/Delete</th>
-
 	            </tr>
 	            </thead>
 	            <tbody>
@@ -75,7 +62,7 @@
                           <i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>
 
 						  <td>
-							   <a href="{% url 'custom_admin:UserUpdate' user.id %}" class="btn btn-primary a-btn-slide-text">
+							   <a href="{% url 'myapp:UserUpdate' user.id %}" class="btn btn-primary a-btn-slide-text">
 								   <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                  <a href="#myModal-{{user.id}}" class="btn btn-danger a-btn-slide-text" data-toggle="modal">
@@ -95,7 +82,7 @@
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-													<a type="button" class="btn btn-danger" href="{% url 'custom_admin:UserDelete' user.id %}" >Confirm</a>
+													<a type="button" class="btn btn-danger" href="{% url 'myapp:UserDelete' user.id %}" >Confirm</a>
 												</div>
 											</div>
 										</div>

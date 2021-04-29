@@ -1,7 +1,6 @@
   <!DOCTYPE html>
 {%load static%}
 
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -39,7 +38,6 @@
         <!-- Main Sidebar Container -->
         {% include 'side_navbar.html'%}
 
-
       <div class="content-wrapper">
           <div class="content-header">
               <div class="container-fluid">
@@ -67,17 +65,13 @@
                 </div>
               {% endfor %}
             {% endif %}
-          </div>
 
           </div>
-
           {% block wrapper%}
 
 
-
-           {% endblock %}
-
-      </div>
+          {% endblock %}
+          </div>
 
         {% include 'footer.html' %}
 
@@ -95,6 +89,7 @@
                     $(".alert-dismissible").alert('close');
                 });
             </script>
+          </div>
       {%block extra%}
 
       {% endblock %}

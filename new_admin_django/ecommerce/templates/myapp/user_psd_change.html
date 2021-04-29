@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load crispy_forms_tags %}
+
+
+{%block titlebar%}
+  <title>user password change </title>
+{%endblock%}
+
+{% block page-head %}
+   User Page
+{% endblock %}
+
+{% block breadcrumb %}
+   User page
+{% endblock %}
+
+{% block wrapper%}
+
+<div class="col-md-12">
+    <div class="card card-primary">
+      <form method="post" action="{% url 'myapp:UserUpdate' id %}">
+           <div class="card-body">
+               {% csrf_token %}
+
+                    {{ form.as_p}}
+
+
+           </div>
+            <div class="card-footer">
+	       <button type="submit" class="btn btn-primary">submit</button>
+                <a class="btn btn-default" href="../" %}">cancel</a>
+            </div>
+       </form>
+    </div>
+</div>
+
+
+{% endblock%}
