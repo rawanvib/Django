@@ -7,11 +7,11 @@
 
 
 {% block page-head %}
-   Product
+   Banner
 {% endblock %}
 
 {% block breadcrumb %}
-   Product list
+   Banner list
 {% endblock %}
 
 
@@ -23,13 +23,13 @@
 	        <div class="card-header">
 				<div class="col-12">
 
-				   <a href="{% url 'myapp:ProductAdd' %}" class=" btn btn-primary float-right">
+				   <a href="{% url 'myapp:BannerAdd' %}" class=" btn btn-primary float-right">
 				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				  <span><strong>Add+ </strong></span>
 				</a>
 
 			  </div>
-	          <h3 class="card-title">user table</h3>
+	          <h3 class="card-title">banner table</h3>
 	        </div>
 	        <!-- /.card-header -->
 	        <div class="card-body">
@@ -37,15 +37,12 @@
 	            <thead>
 	            <tr>
 					<th>id</th>
-	              <th>Name</th>
-	              <th>SKU</th>
-	              <th>Price</th>
-					<th>Special Price</th>
-					<th>Special Price from</th>
-					<th>Special Price to</th>
-				  	<th>Quantity</th>
 					<th>Status</th>
-					<th>title</th>
+					<th>Path</th>
+					<th>Created by</th>
+					<th>Created date</th>
+					<th>Modified by</th>
+					<th>Modified date</th>
 				  <th>Edit/Delete</th>
 
 	            </tr>
@@ -53,31 +50,28 @@
 	            <tbody>
 
 
-	                {%for product in products %}
+	                {%for banner in banners %}
 		                <tr>
-                            <td>{{product.id}}</td>
-		                  <td>{{ product.name }}</td>
-		                  <td>{{product.sku}}</td>
-						  <td>{{product.price}}</td>
-							<td>{{product.special_price}}</td>
-							<td>{{product.special_price_from}}</td>
-							<td>{{product.special_price_to}}</td>
-                          	<td>{{product.quantity}}</td>
-							<td>{{product.title}}</td>
-							<td>{% if product.status == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}
+                            <td>{{banner.id}}</td>
+
+							<td>{% if banner.status == 'Active' %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}
 							<i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>
 <!--		                  <td>{% if  user.is_active == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}-->
 <!--                          <i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>-->
-
+							<td>{{banner.file_path}}</td>
+							<td>{{banner.created_by}}</td>
+							<td>{{banner.created_date}}</td>
+							<td>{{banner.modified_by}}</td>
+							<td>{{banner.modified_date}}</td>
 						  <td>
-							   <a href="{% url 'myapp:ProductEdit' product.id %}" class="btn btn-primary a-btn-slide-text">
+							   <a href="{% url 'myapp:BannerEdit' banner.id %}" class="btn btn-primary a-btn-slide-text">
 								   <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                 <a href="#myModal-{{user.id}}" class="btn btn-danger a-btn-slide-text" data-toggle="modal">
+                                 <a href="#myModal-{{banner.id}}" class="btn btn-danger a-btn-slide-text" data-toggle="modal">
                                   <i class="fa fa-trash"></i>
                                  </a>
 
-								  <div id="myModal-{{user.id}}" class="modal fade" tabindex="-1">
+								  <div id="myModal-{{banner.id}}" class="modal fade" tabindex="-1">
 										<div class="modal-dialog">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -90,7 +84,7 @@
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-													<a type="button" class="btn btn-danger" href="{% url 'myapp:UserDelete' user.id %}" >Confirm</a>
+													<a type="button" class="btn btn-danger" href="{% url 'myapp:BannerDelete' banner.id %}" >Confirm</a>
 												</div>
 											</div>
 										</div>

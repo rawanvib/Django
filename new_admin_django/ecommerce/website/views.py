@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from myapp.models import User
+from myapp.models import User, Banner
 
 # Create your views here.
 def home(request):
-    return render(request, 'website/home.html')
+    banner=Banner.objects.all()
+    return render(request, 'website/home.html',{'banners':banner})
 
 def register_view(request):
     if request.method == 'POST':
@@ -52,4 +53,5 @@ def login_view(request):
 def logout_view(request):
    logout(request)
    return redirect('website:home')
+
 

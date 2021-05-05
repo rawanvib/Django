@@ -13,28 +13,24 @@
     edit product
 {% endblock %}
 
+{% block links %}
+<link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css'%}">
+<link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+{% endblock %}
+
+
 {% block wrapper%}
 
-    <form method="POST" action="{% url 'myapp:ProductEdit'%}">
+    <form method="POST" action="{% url 'myapp:ProductEdit' id %}" enctype="multipart/form-data" novalidate>
         <div class="card-body">
                 {% csrf_token %}
-        {% for field in form3 %}
-                <div class=" form-group is-invalid" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-                {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
-                {{ field }}
-
-                            {% if field.errors %}
-                                <div class="col-sm-6">
-                                    <strong id="passwordHelp" class="text-danger">
-                                {{ field.errors }}
-                                    </strong>
-                                </div>
-                             {% endif %}
-                 <p class="help">{{ field.help_text|safe }}</p>
-            </div>
-
-                {% endfor %}
-
             {% for field in form1 %}
                 <div class=" form-group is-invalid" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
                 {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
@@ -51,30 +47,116 @@
             </div>
 
                 {% endfor %}
-        {% for field in form2 %}
-                <div class=" form-group is-invalid" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-                {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
-                {{ field }}
+            <table class="table">
+                   {{ formset1.management_form }}
+                   {% for form in formset1.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
 
-                            {% if field.errors %}
-                                <div class="col-sm-6">
-                                    <strong id="passwordHelp" class="text-danger">
-                                {{ field.errors }}
-                                    </strong>
-                                </div>
-                             {% endif %}
-                 <p class="help">{{ field.help_text|safe }}</p>
-            </div>
+                        <tr class="formset_row">
 
-                {% endfor %}
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
+<table class="table">
+                   {{ formset2.management_form }}
+                   {% for form in formset2.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
 
+                        <tr class="formset_row">
 
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
+        <table class="table">
+                   {{ formset3.management_form }}
+                   {% for form in formset3.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
+
+                        <tr class="formset_row">
+
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
 
             <div class="card-footer">
 	       <button type="submit" class="btn btn-primary">submit</button>
-                <a class="btn btn-default" href="../">cancel</a>
+                <a class="btn btn-default" href="{% url 'myapp:ProductList' %}">cancel</a>
             </div>
        </form>
 </div>
 </div>
 {% endblock %}
+{%block extra%}
+<script src="{% static 'plugins/select2/js/select2.full.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.js"></script>
+<!--<script src="{% static 'formset/jquery.formset.js' %}"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+        integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
+
+
+<script src="{% static 'myapp/product_form.js' %}"></script>
+
+{% endblock%}

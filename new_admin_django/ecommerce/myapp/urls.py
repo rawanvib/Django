@@ -28,9 +28,9 @@ urlpatterns = [
     path('category/delete/<int:pk>', views.delete_category, name='delete_category'),
 
     path('product/',views.product_list,name='ProductList'),
-    path('product/add/',views.new_product,name='ProductAdd'),
-    path('product/edit/<int:pk>/', views.edit_product, name='ProductEdit'),
-    path('product/delete/<int:pk>', views.delete_product, name='ProductDelete'),
+    path('product/add/',views.add_new_product,name='ProductAdd'),
+    path('product/edit/<int:id>/', views.edit_product, name='ProductEdit'),
+    path('product/delete/<int:id>', views.delete_product, name='ProductDelete'),
 
     path('productAttribute/',views.Product_Attribute,name='ProductAttribute'),
     path('productAttribute/add/',views.Product_Attribute_Add,name='ProductAttributeAdd'),
@@ -41,4 +41,10 @@ urlpatterns = [
     path('productAttributeValue/add/', views.Product_Attribute_Value_Add, name='ProductAttributeValueAdd'),
     path('productAttributeValue/edit/<int:id>/', views.Product_Attribute_Value_Edit, name='ProductAttributeValueEdit'),
     path('productAttributeValue/delete/<int:id>/', views.Product_Attribute_Value_Delete, name='ProductAttributeValueDelete'),
+
+    path('banner/',views.banner_list,name='BannerList'),
+    path('banner/add',views.new_banner,name='BannerAdd'),
+    path('banner/edit/<int:id>',views.edit_banner,name='BannerEdit'),
+    path('banner/delete/<int:id>',views.delete_banner,name='BannerDelete')
+
 ]

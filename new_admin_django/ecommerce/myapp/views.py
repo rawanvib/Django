@@ -14,8 +14,9 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
 from .forms import UserForm, OldPassForm,UserUpdateForm,CategoryForm, ProductImageForm, ProductForm, ProductMetaForm
-from .forms import ProductAttributeForm,ProductAttributeEditForm,ProductAttributeValueForm, ProductAttributeAssociationForm
+from .forms import ProductAttributeForm,ProductAttributeEditForm,ProductAttributeValueForm, ProductAttributeAssociationForm , BannerForm
 from .models import User, Categories,Product,ProductAttributeValue, ProductAttributeAssociation, ProductImage, ProductMeta,ProductAttribute
+from .models import Banner
 
 
 from django.forms import inlineformset_factory
@@ -336,31 +337,37 @@ def product_list(request):
 
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
-def new_product(request):
+def add_new_product(request):
     ProductImageFormSet=inlineformset_factory(Product, ProductImage,form=ProductImageForm,extra=1)
-    ProductAttributeFormset=inlineformset_factory(Product, ProductAttributeAssociation,form=ProductAttributeAssociationForm,extra=1)
+    ProductAttributeFormset=inlineformset_factory(Product, ProductAttributeAssociation,form=ProductAttributeAssociationForm,extra=2)
     ProductMetaFormset=inlineformset_factory(Product, ProductMeta,form=ProductMetaForm,extra=1)
 
     if request.method == "POST":
         form1 = ProductForm(request.POST)
-        formset1 = ProductImageFormSet(request.POST,request.FILES)
+        formset1 = ProductImageFormSet(request.POST, request.FILES)
         formset2 = ProductMetaFormset(request.POST)
         formset3 = ProductAttributeFormset(request.POST)
 
         if form1.is_valid() and formset1.is_valid() and formset2.is_valid() and formset3.is_valid():
             #Each query is immediately committed to the db
             with transaction.atomic():
-                instance = form.save(commit=False)
+                instance = form1.save(commit=False)
                 instance.created_by=request.user
                 instance.modified_by=request.user
                 instance.save()
-                form.save_m2m
+                form1.save_m2m()
 
                 for image in formset1:
                     if image.is_valid():
                         image=image.save(commit=False)
                         image.product=instance
                         image.save()
+
+                for data in formset2:
+                    if data.is_valid():
+                        data=data.save(commit=False)
+                        data.product=instance
+                        data.save()
 
                 for attribute in formset3:
                     if attribute.is_valid() and attribute.has_changed():
@@ -382,36 +389,125 @@ def new_product(request):
 
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
-def edit_product(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    if request.method == "POST":
+def edit_product(request, id):
+    product = get_object_or_404(Product, id=id)
+    ProductImageFormSet = inlineformset_factory(Product, ProductImage, form=ProductImageForm, extra=1)
+    ProductAttributeFormset = inlineformset_factory(Product, ProductAttributeAssociation,
+                                                    form=ProductAttributeAssociationForm, extra=1)
+    ProductMetaFormset = inlineformset_factory(Product, ProductMeta, form=ProductMetaForm, extra=1)
+
+    if request.method == 'POST':
         form1 = ProductForm(request.POST, instance=product)
-        form2 = ProductImageForm(request.POST, instance=product)
-        form3 = ProductMetaForm(request.POST, instance=product)
-        if form.is_valid():
-            product1 = form1.save(commit=False)
-            product1.save()  # add data to database
-            product2 = form2.save(commit=False)
-            product2.save()
-            product3 = form3.save(commit=False)
-            product3.save()
-            return redirect('myapp:category_list')
+        formset1 = ProductImageFormSet(request.POST, request.FILES, instance=product)
+        formset2 = ProductMetaFormset(request.POST, instance=product)
+        formset3 = ProductAttributeFormset(request.POST, instance=product)
+
+        if form1.is_valid() and formset1.is_valid() and formset2.is_valid() and formset3.is_valid():
+            with transaction.atomic():
+                # import pdb
+                # pdb.set_trace()
+                instance = form1.save(commit=False)
+                instance.modify_by = request.user
+                instance.save()
+                form1.save_m2m()
+                formset3.save()
+
+                for image in formset1:
+                    if image.is_valid() and image.has_changed():
+                        image = image.save(commit=False)
+                        image.product = instance
+                        image.save()
+
+                instance2 = formset1.save(commit=False)
+                for obj in formset1.deleted_objects:
+                    obj.delete()
+
+                instance3 = formset2.save(commit=False)
+                for obj in formset2.deleted_objects:
+                    obj.delete()
+
+                instance4 = formset3.save(commit=False)
+                for obj in formset3.deleted_objects:
+                    obj.delete()
+
+                messages.success(request, "product edited succesfully")
+            return redirect('myapp:ProductList')
+
     else:
-        form = CategoryForm(instance=category)
-    return render(request, 'myapp/categories_edit.html', {'form1': form1,
-                                                          'form2': form2,
-                                                          'form3': form3,
-                                                          'pk':pk})
+        form1 = ProductForm(request.GET or None, instance=product)
+        formset1 = ProductImageFormSet(instance=product)
+        formset2 = ProductMetaFormset(instance=product)
+        formset3 = ProductAttributeFormset(instance=product)
+
+    return render(request, 'myapp/product_edit.html',
+                  {'form1': form1, 'formset1': formset1, 'formset2': formset2,'formset3':formset3, 'id': id})
+
+# def load_product_attribute_value(request):
+#     product_attribute_id = request.GET.get('product_attribute_id')
+#     print(product_attribute_id)
+#     product_attribute_value_ids = ProductAttributeValue.objects.filter(attribute_name=product_attribute_id)
+#     return render(request, 'attribute/product_attribute_list_options.html',
+#                   {'product_attribute_value_ids': product_attribute_value_ids})
 
 
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
-def delete_product(request, pk):
-    product = get_object_or_404(Product, pk=pk)
+def delete_product(request, id):
+    product = get_object_or_404(Product, id=id)
     try:
         product.delete()
-        messages.success(request, "Category deleted succesfully")
+        messages.success(request, "Product deleted succesfully")
     except IntegrityError:
-        messages.warning(request, "category cannot be deleted because of integrity")
-
+        messages.warning(request, "Product cannot be deleted because of integrity")
     return redirect('myapp:ProductList')
+
+
+#________________________________________Banner__________________________________________#
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def banner_list(request):
+    banner=Banner.objects.all()
+    return render(request,'myapp/banner.html',{'banners':banner})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def new_banner(request):
+    if request.method=='POST':
+        form=BannerForm(request.POST)
+        if form.is_valid():
+            instance=form.save(commit=False)
+            instance.save()
+            messages.success(request,"Banner added successfully.")
+            return redirect('myapp:BannerList')
+    else:
+        form=BannerForm()
+    return render(request,'myapp/banner_add.html',{'form':form})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def edit_banner(request, id):
+    banner = get_object_or_404(Banner, id=id)
+    if request.method == "POST":
+        form =BannerForm(request.POST, instance=banner)
+        if form.is_valid():
+            banner = form.save(commit=False)
+            #instance.modify_by = request.user
+            banner.save()  # add data to database
+            messages.success(request, "banner updated successfuly")
+            return redirect('myapp:BannerList')
+    else:
+        form = BannerForm(instance=banner)
+    return render(request, 'myapp/banner_edit.html', {'form': form,'id':id})
+
+#delete
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def delete_banner(request, id):
+    instance = get_object_or_404(Banner, id=id)
+    try:
+        instance.delete()
+        messages.success(request, "banner deleted succesfully")
+    except IntegrityError:
+        messages.warning(request, "banner cannot be deleted because of integrity")
+
+    return redirect('myapp:BannerList')

@@ -89,6 +89,12 @@
                      <p>Categories</p>
                  </a>
              </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                 <a href="{% url 'myapp:BannerList' %}" class="nav-link {% if request.resolver_match.url_name == "banner_list" %}active{% endif %}">
+                     <i class="fas fa-image" aria-hidden="true"></i>
+                     <p>Banner</p>
+                 </a>
+             </li>
              <li class="nav-item d-none d-sm-inline-block">
                  <a href="{% url 'myapp:login' %}" class="nav-link">
                      <i class="fa fa-sign-out" aria-hidden="true"></i>

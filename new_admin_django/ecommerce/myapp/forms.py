@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
-from .models import Categories, Product, ProductImage, ProductAttribute,ProductAttributeValue, ProductMeta,ProductAttributeAssociation
+from .models import Categories, Product, ProductImage, ProductAttribute,ProductAttributeValue, ProductMeta,ProductAttributeAssociation, Banner
 
 class UserForm(UserCreationForm):
 
@@ -175,6 +175,8 @@ class ProductForm(ModelForm):
             'price': forms.NumberInput(attrs={'class': 'form-control'}),
             'status': forms.Select(choices=TRUE_FALSE_CHOICES, attrs={'class': 'form-control'}),
             'special_price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'special_price_from':forms.widgets.SelectDateWidget(),
+            'special_price_to':forms.widgets.SelectDateWidget(),
             'is_featured':forms.Select(choices=TRUE_FALSE_CHOICES,attrs={'class':'form-control'}),
             'quantity':forms.NumberInput(attrs={'class':'form-control'}),
 
@@ -200,7 +202,6 @@ class ProductImageForm(ModelForm):
             (False, 'False'),
 
         ]
-
         model = ProductImage
         fields = '__all__'
         exclude=['created_by','modified_by','created_date','modified_date']
@@ -247,4 +248,15 @@ class ProductAttributeAssociationForm(ModelForm):
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty queryset
         elif self.instance.pk:
-            self.fields['product_attribute_value_id'].queryset=self.instance.product_attribute_id.productattributevalues_set.all()
+            self.fields['product_attribute_value_id'].queryset=self.instance.product_attribute_id.productattributevalue_set.all()
+
+
+class BannerForm(ModelForm):
+
+    class Meta:
+        model=Banner
+        fields='__all__'
+        exclude=['created_by','modified_by']
+        widgets={
+            'file_path':forms.TextInput(attrs={'class':'form-control'}),
+        }

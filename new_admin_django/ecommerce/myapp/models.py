@@ -141,18 +141,18 @@ class ProductAttributeValue(models.Model):
 
 
 class ProductImage(models.Model):
-	def upload_path(self, filename):
-		return 'images_from_db/products/image_%s%s' % (timezone.now().strftime('%Y/%m/%d/%Y%m%d_'))
+	# def upload_path(self, filename):
+	# 	return 'static/uploads/image_%s%s' % (timezone.now().strftime('%Y/%m/%d/%Y%m%d_'), filename)
 
 	product = models.ForeignKey('Product', on_delete=models.DO_NOTHING)
 	status = models.BooleanField(default=False)
-	image_name = models.ImageField(upload_to=upload_path)
+	image_name = models.ImageField(upload_to='products/product_images')
 	created_date = models.DateTimeField(auto_now_add=True)
 	modified_date = models.DateTimeField(auto_now=True)
 	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='product_image_created_by',default='', null=True, blank=True)
 	modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='product_image_modify_by',default='', null=True, blank=True)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
 
@@ -164,5 +164,15 @@ class ProductAttributeAssociation(models.Model):
 
 #____________________________________banner____________________________#
 class Banner(models.Model):
-	status=models.BooleanField(default=False)
-	file_name = models.CharField(max_length=255)
+	STATUS_CHOICE=(
+		('Active', 'Active'),
+		('Inactive', 'Inactive'),
+	)
+	status = models.CharField(max_length=10, choices=STATUS_CHOICE, default='Inactive')
+	file_path = models.CharField(max_length=255)
+	created_date = models.DateTimeField(auto_now_add=True)
+	modified_date = models.DateTimeField(auto_now=True)
+	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+								   related_name='banner_uploaded_by', default='', null=True, blank=True)
+	modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+									related_name='banner_modified_by', default='', null=True, blank=True)

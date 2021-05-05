@@ -1,5 +1,69 @@
 {% extends 'website/base_website.html' %}
+{% load static %}
 
 {% block title %}
 {{block.super}}
+{% endblock %}
+
+{% block wrapper %}
+
+	{% block slider %}
+
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							{% for banner in banners%}
+							<li data-target="#slider-carousel" data-slide-to="{{ forloop.counter }}" {% if forloop.first %}class="active" {% endif %}></li>
+							{% endfor %}
+						</ol>
+
+						<div class="carousel-inner">
+							{% for banner in banners %}
+							<div class="item {% if forloop.first %}active{% endif %}">
+
+<!--style="max-width:484px;max-height:425px;min-width:484px;min-height:425px;"-->
+									<img src="{{banner.file_path}}" class="img-responsive" style="hegiht:100%;width:100%;" alt="" />
+
+							</div>
+
+							{% endfor %}
+
+						</div>
+
+
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	{% endblock %}
+
+
+{% block sidebar %}
+{{block.super}}
+{% endblock %}
+
+{% block feature_item %}
+{{block.super}}
+{% endblock %}
+
+{% block category_tab %}
+{{block.super}}
+{% endblock %}
+
+{% block recommended %}
+{{block.super}}
+{% endblock %}
+
 {% endblock %}
