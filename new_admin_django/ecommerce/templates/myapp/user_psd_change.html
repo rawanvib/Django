@@ -19,12 +19,11 @@
 
 <div class="col-md-12">
     <div class="card card-primary">
-      <form method="post" action="{% url 'myapp:UserUpdate' id %}">
+      <form method="post" action="">
            <div class="card-body">
                {% csrf_token %}
 
                     {{ form.as_p}}
-
 
            </div>
             <div class="card-footer">

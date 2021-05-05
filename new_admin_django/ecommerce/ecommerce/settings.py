@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'staff',
+        'NAME': 'shopper',
         'USER':'postgres',
         'PASSWORD':'passgres',
         'HOST':'localhost',
@@ -140,7 +140,8 @@ STATIC_DIR,
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'images_from_db')
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

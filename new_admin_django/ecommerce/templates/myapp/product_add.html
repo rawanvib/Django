@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block titlebar%}
+  <title>dashboard | product_add</title>
+{%endblock%}
+
+{% block page-head %}
+   Add new product
+{% endblock %}
+
+{% block breadcrumb %}
+    add product
+{% endblock %}
+
+{% block wrapper%}
+
+    <form method="POST" action="{% url 'myapp:ProductAdd'%}">
+        <div class="card-body">
+                {% csrf_token %}
+        {% for field in form1 %}
+                <div class=" form-group is-invalid" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+                {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
+                {{ field }}
+
+                            {% if field.errors %}
+                                <div class="col-sm-6">
+                                    <strong id="passwordHelp" class="text-danger">
+                                {{ field.errors }}
+                                    </strong>
+                                </div>
+                             {% endif %}
+                 <p class="help">{{ field.help_text|safe }}</p>
+            </div>
+
+                {% endfor %}
+            <table class="table">
+                   {{ formset1.management_form }}
+                   {% for form in formset1.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
+
+                        <tr class="formset_row">
+
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
+<table class="table">
+                   {{ formset2.management_form }}
+                   {% for form in formset2.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
+
+                        <tr class="formset_row">
+
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
+        <table class="table">
+                   {{ formset3.management_form }}
+                   {% for form in formset3.forms %}
+                       {% if forloop.first %}
+                       <thead>
+                         <tr>
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label|capfirst }}</th>
+                            {% endfor %}
+                         </tr>
+                       </thead>
+                       {% endif %}
+
+                        <tr class="formset_row">
+
+                            {% for field in form.visible_fields %}
+                                <td>
+                                    {# Include the hidden fields in the form #}
+                                    {% if forloop.first %}
+                                        {% for hidden in form.hidden_fields %}
+                                            {{ hidden }}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ field.errors.as_ul }}
+                                    {{ field }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                   {% endfor %}
+               </table>
+
+
+
+
+
+
+
+
+            <div class="card-footer">
+	       <button type="submit" class="btn btn-primary">submit</button>
+                <a class="btn btn-default" href="../">cancel</a>
+            </div>
+       </form>
+</div>
+</div>
+{% endblock %}

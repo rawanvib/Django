@@ -74,10 +74,10 @@
 		                  <td>{{ category.id }}</td>
 		                  <td>{{ category.name | upper }}</td>
                             <td>{{ category.parent }}</td>
-		                  <td>{{ category.created_by.get_full_name }}</td>
+		                  <td>{{ category.created_by }}</td>
 		                  <td>{{ category.created_date }}</td>
-		                  <td>{{ category.modify_by.get_full_name }}</td>
-		                  <td>{{ category.modify_date }}</td>
+		                  <td>{{ category.modify_by }}</td>
+		                  <td>{{ category.modified_date }}</td>
 		                  <td>{% if  category.status == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}
                           <i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>
 

@@ -30,7 +30,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
+<!--<li class="nav-item has-treeview menu-open">-->
                <li class="nav-item has-treeview menu-open">
                     <a href="{% url 'myapp:index'%}" class="nav-link {% if request.resolver_match.url_name == "index" %}active{% endif %}">
                       <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -48,9 +48,41 @@
                        </p>
                      </a>
                 </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                 <a href="#" class="nav-link">Groups</a>
-             </li>
+            <li class="nav-item has-treeview  {% if request.resolver_match.url_name == "ProductList" %}menu-open{% endif %}
+            {% if request.resolver_match.url_name == "ProductAttribute" %}menu-open{% endif %}
+            {% if request.resolver_match.url_name == "ProductAttributeValue" %}menu-open{% endif %}">
+
+            <a href="#" class="nav-link  {% if request.resolver_match.url_name == "ProductList" %}active{% endif %}
+            {% if request.resolver_match.url_name == "ProductAttribute" %}active{% endif %}
+            {% if request.resolver_match.url_name == "ProductAttributeValue" %}active{% endif %}" >
+            <i class="nav-icon fas fa-table"></i>
+            <p>Product<i class="fas fa-angle-left right"></i></p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{% url 'myapp:ProductList' %}" class="nav-link {% if request.resolver_match.url_name == "product_list" %}active{% endif %}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> Display Products </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{% url 'myapp:ProductAttribute' %}" class="nav-link {% if request.resolver_match.url_name == "ProductAttribute" %}active{% endif %}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Product Attribute</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{% url 'myapp:ProductAttributeValue' %}" class="nav-link {% if request.resolver_match.url_name == "ProductAttributeValue" %}active{% endif %}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Product Attribute Value </p>
+                    </a>
+                </li>
+            </ul>
+
             <li class="nav-item d-none d-sm-inline-block">
                  <a href="{% url 'myapp:category_list' %}" class="nav-link {% if request.resolver_match.url_name == "category_list" %}active{% endif %}">
                      <i class="fa fa-tag" aria-hidden="true"></i>

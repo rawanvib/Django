@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
-from .models import Categories
+from .models import Categories, Product, ProductImage, ProductAttribute,ProductAttributeValue, ProductMeta,ProductAttributeAssociation
 
 class UserForm(UserCreationForm):
 
@@ -37,7 +37,6 @@ class UserUpdateForm(UserChangeForm):
     def __init__(self, *args, **kwargs):
         super(UserUpdateForm, self).__init__(*args, **kwargs)
         self.fields['email'].widget.attrs['class'] = 'form-control'
-        self.fields['email'].widget.attrs['id'] = 'exampleInputEmail1'
         self.fields['email'].widget.attrs['placeholder'] = 'email'
         self.fields['first_name'].widget.attrs['class'] = 'form-control'
         self.fields['first_name'].widget.attrs['placeholder'] = 'first name'
@@ -107,7 +106,7 @@ class OldPassForm(forms.Form):
 class CategoryForm(ModelForm):
     class Meta:
         model = Categories
-        fields = '__all__'
+        fields = ['name','description','parent','status']
 
     def __init__(self,*args, **kwargs):
         super(CategoryForm,self).__init__(*args, **kwargs)
@@ -118,13 +117,134 @@ class CategoryForm(ModelForm):
         self.fields['description'].widget.attrs['rows'] = 2
         self.fields['parent'].widget.attrs['class'] = 'form-control'
         self.fields['parent'].widget.attrs['placeholder'] = 'Parent of a category'
-        self.fields['created_by'].widget.attrs['class'] = 'form-control'
-        self.fields['created_by'].widget.attrs['placeholder'] = ''
-        self.fields['modified_by'].widget.attrs['class'] = 'form-control'
-        self.fields['modified_by'].widget.attrs['placeholder'] = ''
-        self.fields['created_date'].widget.attrs['class'] = 'form-control'
-        self.fields['created_date'].widget.attrs['value'] = 'YYYY-MM-DD'
-        self.fields['modified_date'].widget.attrs['class'] = 'form-control'
-        self.fields['modified_date'].widget.attrs['value'] = 'YYYY-MM-DD'
+        # self.fields['created_by'].widget.attrs['class'] = 'form-control'
+        # self.fields['created_by'].widget.attrs['placeholder'] = ''
+        # self.fields['modify_by'].widget.attrs['class'] = 'form-control'
+        # self.fields['modify_by'].widget.attrs['placeholder'] = ''
+
+class ProductAttributeForm(ModelForm):
+    class Meta:
+        model=ProductAttribute
+        fields=['name','description_text']
+        widgets={
+            'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Name of attribute'}),
+            'description_text':forms.Textarea(attrs={'rows':2,'class':'form-control'})
+        }
+
+class ProductAttributeEditForm(ModelForm):
+    class Meta:
+        model=ProductAttribute
+        fields=['name','description_text']
+        widgets={
+            'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Name of attribute'}),
+            'description_text':forms.Textarea(attrs={'rows':2,'class':'form-control'})
+        }
+
+class ProductAttributeValueForm(ModelForm):
+    #attribute_name = forms.ModelChoiceField(ProductAttribute.objects.all())
+
+    class Meta:
+        model=ProductAttributeValue
+        fields=['attribute','value']
+        labels={
+            'attribute':'Select name of attibute',
+            'value':'Value of an attribute'
+        }
+        widgets={
+            'value':forms.TextInput(attrs={'class':'form-control','placeholder':'Value of attribute'}),
+            'description_text':forms.Textarea(attrs={'rows':2,'class':'form-control'})
+        }
+
+class ProductForm(ModelForm):
+    class Meta:
+        TRUE_FALSE_CHOICES=[
+            (True,'True'),
+            (False,'False')
+        ]
+
+        model=Product
+        fields= ('name','sku','short_description','long_description','product_categories',
+                 'price','special_price','special_price_from','special_price_to','status','quantity',
+                 'is_featured')
+
+        widgets={
+            'name':forms.TextInput(attrs={'class':'form-control'}),
+            'sku':forms.TextInput(attrs={'class':'form-control'}),
+            'short_description': forms.TextInput(attrs={'class': 'form-control','rows':2}),
+            'long_description': forms.TextInput(attrs={'class': 'form-control','rows':3}),
+            'price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'status': forms.Select(choices=TRUE_FALSE_CHOICES, attrs={'class': 'form-control'}),
+            'special_price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'is_featured':forms.Select(choices=TRUE_FALSE_CHOICES,attrs={'class':'form-control'}),
+            'quantity':forms.NumberInput(attrs={'class':'form-control'}),
+
+        }
+
+        def __init__(self, *args, **kwargs):
+            super(ProductForm, self).__init__(*args, **kwargs)
+            self.fields['product_categories'].widget.attrs['class'] = 'select2'
+            self.fields['product_categories'].widget.attrs['multiple'] = 'multiple'
+            self.fields['product_categories'].widget.attrs['data-dropdown-css-class'] = "se1lect2-blue"
+            self.fields['product_categories'].widget.attrs['style'] = 'width: 100%;'
+            self.fields['special_price_from'].widget.attrs['class'] = 'datepicker form-control'
+            self.fields['special_price_from'].widget.attrs['autocomplete'] = 'off'
+            self.fields['special_price_to'].widget.attrs['class'] = 'datepicker form-control'
+            self.fields['special_price_to'].widget.attrs['autocomplete'] = 'off'
 
 
+class ProductImageForm(ModelForm):
+
+    class Meta:
+        TRUE_FALSE_CHOICES = [
+            (True, 'True'),
+            (False, 'False'),
+
+        ]
+
+        model = ProductImage
+        fields = '__all__'
+        exclude=['created_by','modified_by','created_date','modified_date']
+        labels={'status':'Image status'}
+
+        def __init__(self, *args, **kwargs):
+            super(ProductImageForm, self).__init__(*args, **kwargs)
+            self.fields['image_name'].widget.attrs['class'] = 'form-control'
+
+
+class ProductMetaForm(ModelForm):
+    class Meta:
+        model = ProductMeta
+        fields='__all__'
+        exclude=['product']
+        widgets={
+            'title':forms.TextInput(attrs={'class':'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control','rows':2}),
+            'keywords': forms.Textarea(attrs={'class': 'form-control','rows':2}),
+
+        }
+
+class ProductAttributeAssociationForm(ModelForm):
+
+    class Meta:
+        model=ProductAttributeAssociation
+        exclude=['product_id']
+
+        widgets={
+            'product_attribute_id':forms.Select(attrs={'class':'form-control p-id-changes'}),
+            'product_attribute_value_id':forms.Select(attrs={'class':'form-control p-value-changes'})
+        }
+
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+
+        # initially don't reference any attribute
+        self.fields['product_attribute_value_id'].queryset = ProductAttributeValue.objects.none()
+
+        if self.add_prefix('product_attribute_id') in self.data:
+            try:
+                product_attribute_id = int(self.data.get(self.add_prefix('product_attribute_id')))
+                self.fields['product_attribute_value_id'].queryset = ProductAttributeValue.objects.filter(attribute=product_attribute_id)
+            except (ValueError, TypeError):
+                pass  # invalid input from the client; ignore and fallback to empty queryset
+        elif self.instance.pk:
+            self.fields['product_attribute_value_id'].queryset=self.instance.product_attribute_id.productattributevalues_set.all()

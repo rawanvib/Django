@@ -13,15 +13,14 @@ from django.contrib.auth.models import Group
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
-from .forms import UserForm, OldPassForm,UserUpdateForm,CategoryForm
-
-from .models import Categories
+from .forms import UserForm, OldPassForm,UserUpdateForm,CategoryForm, ProductImageForm, ProductForm, ProductMetaForm
+from .forms import ProductAttributeForm,ProductAttributeEditForm,ProductAttributeValueForm, ProductAttributeAssociationForm
+from .models import User, Categories,Product,ProductAttributeValue, ProductAttributeAssociation, ProductImage, ProductMeta,ProductAttribute
 
 
 from django.forms import inlineformset_factory
 
 from .decorators import unauthenticated_user, allowed_users
-from .models import User
 
 # Create your views here.
 @login_required(login_url='myapp:login')
@@ -33,26 +32,19 @@ def index(request):
 # @unauthenticated_user
 def login(request):
     if request.method == 'POST':
-
-        username=request.POST.get('username')
+        username = request.POST.get('username')
         password = request.POST.get('password')
         valuenext = request.POST.get('next')
-
         user = authenticate(request, username=username, password=password)
-
-        groups = request.user.groups.values_list('name',flat = True)
-
+        groups = request.user.groups.values_list('name', flat = True)
         if user is not None and valuenext == '':
-
             if 'admin' in groups or user.is_superuser:
                 auth_login(request, user)
                 messages.success(request, 'you are logged in')
                 return redirect('myapp:index')
             else:
-
                 messages.warning(request, 'you are not authorized for it')
         elif user is not None and valuenext != '':
-
             if 'admin' in groups or user.is_superuser:
                 auth_login(request, user)
                 return redirect(valuenext)
@@ -60,7 +52,6 @@ def login(request):
                 messages.warning(request, 'you are not authorized for it')
         else:
             messages.info(request, 'please enter right credentials')
-
     return render(request, 'myapp/login.html')
 
 
@@ -91,9 +82,10 @@ def UserChange(request):
 
 
 @login_required(login_url='myapp:login')
-def UserChangePsw(request,id):
-    instance=get_object_or_404(User, id=id)
-
+# def UserChangePsw(request,id):
+def UserChangePsw(request):
+    # instance=get_object_or_404(User, id=id)
+    instance = request.user
     if request.method == 'POST':
         form = OldPassForm(request.POST, instance=instance)
         if form.is_valid():
@@ -140,7 +132,6 @@ def UserUpdate(request, id):
     instance = get_object_or_404(User, id=id)
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, instance=instance)
-        #print('in view')
         if form.is_valid():
             form.save()   # add data to database
             messages.success(request, "user updated successfuly")
@@ -186,8 +177,11 @@ def new_category(request):
         form = CategoryForm(request.POST)
         #to see if the data is valid or not ..like form validation
         if form.is_valid():
-            category = form.save(commit=False)  # add data to database
-            category.save()
+            instance = form.save(commit=False)  # add data to database
+            instance.created_by = request.user
+            instance.modify_by = request.user
+            instance.save()
+            messages.success(request, "category added succesfully")
             return redirect('myapp:category_list')
     else:
         form = CategoryForm()
@@ -197,15 +191,17 @@ def new_category(request):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def edit_category(request, pk):
-    category = get_object_or_404(Categories, pk=pk)
+    instance = get_object_or_404(Categories, pk=pk)
     if request.method == "POST":
-        form = CategoryForm(request.POST, instance=category)
+        form = CategoryForm(request.POST, instance=instance)
         if form.is_valid():
-            category = form.save(commit=False)
-            category.save()  # add data to database
+            instance = form.save(commit=False)
+            instance.modify_by = request.user
+            instance.save()  # add data to database
+            messages.success(request, "category updated successfuly")
             return redirect('myapp:category_list')
     else:
-        form = CategoryForm(instance=category)
+        form = CategoryForm(instance=instance)
     return render(request, 'myapp/categories_edit.html', {'form': form,'pk':pk})
 
 #delete
@@ -220,3 +216,202 @@ def delete_category(request, pk):
         messages.warning(request, "category cannot be deleted because of integrity")
 
     return redirect('myapp:category_list')
+
+#---------------------------product attribute----------------------------#
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute(request):
+    product_attributes = ProductAttribute.objects.all()
+
+    return render(request, 'attribute/product_attribute.html', {'product_attributes': product_attributes})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Add(request):
+
+    if request.method == 'POST':
+        form=ProductAttributeForm(request.POST)
+        if form.is_valid():
+            instance=form.save(commit=False)
+            instance.created_by = request.user
+            instance.modified_by = request.user
+            instance.save()
+            messages.success(request, "Attribute added succesfully")
+            return redirect('myapp:ProductAttribute')
+    else:
+        form=ProductAttributeForm()
+    return render(request, 'attribute/product_attribute_add.html', {'form': form})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Edit(request,id):
+    instance=get_object_or_404(ProductAttribute,id=id)
+    if request.method == 'POST':
+        form = ProductAttributeEditForm(request.POST, instance=instance)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.modified_by = request.user
+            instance.save()
+            messages.success(request, "Attribute edited succesfully")
+            return redirect('myapp:ProductAttribute')
+    else:
+        form = ProductAttributeEditForm(instance=instance)
+    return render(request, 'attribute/product_attribute_edit.html', {'form': form,'id':id})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Delete(request,id):
+    data = get_object_or_404(ProductAttribute, id=id)
+    try:
+        data.delete()
+        messages.success(request, "product attribute deleted succesfully")
+    except IntegrityError:
+        messages.warning(request, "product attribute have products so cant delete")
+
+    return redirect('myapp:ProductAttribute')
+
+#---------------------------product attribute----------------------------#
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Value(request):
+    product_attribute_values = ProductAttributeValue.objects.all()
+    return render(request, 'attribute/product_att_value.html', {'product_attribute_values': product_attribute_values})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Value_Add(request):
+    if request.method == 'POST':
+        form = ProductAttributeValueForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.created_by = request.user
+            instance.modified_by = request.user
+            instance.save()
+            messages.success(request, "Attribute value added succesfully")
+            return redirect('myapp:ProductAttributeValue')
+    else:
+        form = ProductAttributeValueForm()
+    return render(request, 'attribute/product_att_value_add.html', {'form': form})
+
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Value_Edit(request,id):
+    instance=get_object_or_404(ProductAttributeValue,id=id)
+    if request.method=="POST":
+        form = ProductAttributeValueForm(request.POST, instance=instance)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.modify_by = request.user
+            instance.save()
+            # form.save_m2m()
+            messages.success(request, "product attribute value updated successfuly")
+            return redirect('myapp:ProductAttributeValue')
+    else:
+        form = ProductAttributeValueForm(instance=instance)
+    return render(request, 'attribute/product_att_value_edit.html', {'form': form, 'id': id})
+
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def Product_Attribute_Value_Delete(request,id):
+    data = get_object_or_404(ProductAttribute, id=id)
+    try:
+        data.delete()
+        messages.success(request, "attribute value deleted succesfully")
+    except IntegrityError:
+        messages.warning(request, "product attribute have products so cant delete")
+    return redirect('myapp:ProductAttributeValue')
+
+
+#---------------------------products----------------------------#
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def product_list(request):
+    products = Product.objects.all()  # retrive all categories
+    context = {'products': products}
+    return render(request, 'myapp/products_list.html', context)
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def new_product(request):
+    ProductImageFormSet=inlineformset_factory(Product, ProductImage,form=ProductImageForm,extra=1)
+    ProductAttributeFormset=inlineformset_factory(Product, ProductAttributeAssociation,form=ProductAttributeAssociationForm,extra=1)
+    ProductMetaFormset=inlineformset_factory(Product, ProductMeta,form=ProductMetaForm,extra=1)
+
+    if request.method == "POST":
+        form1 = ProductForm(request.POST)
+        formset1 = ProductImageFormSet(request.POST,request.FILES)
+        formset2 = ProductMetaFormset(request.POST)
+        formset3 = ProductAttributeFormset(request.POST)
+
+        if form1.is_valid() and formset1.is_valid() and formset2.is_valid() and formset3.is_valid():
+            #Each query is immediately committed to the db
+            with transaction.atomic():
+                instance = form.save(commit=False)
+                instance.created_by=request.user
+                instance.modified_by=request.user
+                instance.save()
+                form.save_m2m
+
+                for image in formset1:
+                    if image.is_valid():
+                        image=image.save(commit=False)
+                        image.product=instance
+                        image.save()
+
+                for attribute in formset3:
+                    if attribute.is_valid() and attribute.has_changed():
+                        attribute=attribute.save(commit=False)
+                        attribute.product_id=instance
+                        attribute.save()
+
+                messages.success(request,"Product added successfully")
+            return redirect("myapp:ProductList")
+    else:
+        form1 = ProductForm()
+        formset1 = ProductImageFormSet()
+        formset2 = ProductMetaFormset()
+        formset3 = ProductAttributeFormset()
+    return render(request,"myapp/product_add.html",{'form1':form1,
+                                                    'formset1':formset1,
+                                                    'formset2':formset2,
+                                                    'formset3':formset3})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def edit_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == "POST":
+        form1 = ProductForm(request.POST, instance=product)
+        form2 = ProductImageForm(request.POST, instance=product)
+        form3 = ProductMetaForm(request.POST, instance=product)
+        if form.is_valid():
+            product1 = form1.save(commit=False)
+            product1.save()  # add data to database
+            product2 = form2.save(commit=False)
+            product2.save()
+            product3 = form3.save(commit=False)
+            product3.save()
+            return redirect('myapp:category_list')
+    else:
+        form = CategoryForm(instance=category)
+    return render(request, 'myapp/categories_edit.html', {'form1': form1,
+                                                          'form2': form2,
+                                                          'form3': form3,
+                                                          'pk':pk})
+
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    try:
+        product.delete()
+        messages.success(request, "Category deleted succesfully")
+    except IntegrityError:
+        messages.warning(request, "category cannot be deleted because of integrity")
+
+    return redirect('myapp:ProductList')

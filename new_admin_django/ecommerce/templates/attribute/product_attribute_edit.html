@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block titlebar%}
+  <title>dashboard | attribute-edit</title>
+{%endblock%}
+
+{% block page-head %}
+   Edit a attribute
+{% endblock %}
+
+{% block breadcrumb %}
+   Edit
+{% endblock %}
+{% block wrapper%}
+<div class="col-md-12">
+    <div class="card card-primary">
+      <form method="post" action="{% url 'myapp:ProductAttributeEdit' id %}">
+           <div class="card-body">
+                {% csrf_token %}
+	            {% for field in form %}
+                            {{ field.label_tag }}
+
+                            {{ field }}
+
+                            {% if field.errors %}
+                                <div class="col-sm-6">
+                                    <strong id="passwordHelp" class="text-danger">
+                                {{ field.errors }}
+                                    </strong>
+                                </div>
+                             {% endif %}
+
+                            <p class="help">{{ field.help_text|safe }}</p>
+                        </div>
+
+                {% endfor %}
+
+            </div>
+            <div class="card-footer">
+	       <button type="submit" class="btn btn-primary">submit</button>
+                <a class="btn btn-default" href="{% url 'myapp:ProductAttribute' %}">cancel</a>
+            </div>
+       </form>
+    </div>
+</div>
+
+{% endblock %}
+{%block extra%}
+<!-- DataTables -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.js' %}"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
+  });
+</script>
+{%endblock%}
