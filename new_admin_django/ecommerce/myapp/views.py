@@ -5,18 +5,18 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import IntegrityError, transaction
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
 
 # forms
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 
-from .forms import UserForm, OldPassForm,UserUpdateForm,CategoryForm, ProductImageForm, ProductForm, ProductMetaForm
+from .forms import UserForm,UserUpdateForm,CategoryForm, ProductImageForm, ProductForm, ProductMetaForm,UserGroupForm
 from .forms import ProductAttributeForm,ProductAttributeEditForm,ProductAttributeValueForm, ProductAttributeAssociationForm , BannerForm
 from .models import User, Categories,Product,ProductAttributeValue, ProductAttributeAssociation, ProductImage, ProductMeta,ProductAttribute
-from .models import Banner
+from .models import Banner, UserWishlist
 
 
 from django.forms import inlineformset_factory
@@ -64,7 +64,24 @@ def logoutUser(request):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def UserList(request):
-    users = User.objects.all()
+    users = User.objects.get_queryset().order_by('id')
+    #wishlist=UserWishlist.objects.filter(user_wishlist__)
+
+    page=request.GET.get('page',1)
+    paginator=Paginator(users,10)
+    try:
+        users=paginator.page(page)
+    except PageNotAnInteger:
+        users=paginator.page(1)
+    except EmptyPage:
+        users=paginator.page(paginator.num_pages)
+
+    if request.method=='POST':
+        page_n=request.POST.get('page_n',None)  # getting page number
+
+        users=paginator.page(page_n).object_list
+
+
     return render(request, 'myapp/user_list.html', {'users': users})
 
 
@@ -155,13 +172,58 @@ def UserDelete(request, id):
 
     return redirect('myapp:UserList')
 
+#------------------------------------group-----------------------------------------
+def group_list(request):
+    groups=Group.objects.all()
+    group_ids=Group.objects.all().values_list('id', flat=True)
+    #permissions=group_ids.permissions_set.all()
+    permissions=Permission.objects.filter(group__id__in=group_ids)
+    return render(request,'myapp/group_list.html',{'groups_ids':group_ids,'permsissions':permissions})
+
+@login_required(login_url='myapp:login')
+@allowed_users(allowed_roles=['admin'])
+def group_select(request):
+    if request.method=='POST':
+        form=UserGroupForm(request.POST)
+        if form.is_valid():
+            form=form.save(commit=False)
+            form.save()
+            messages.success(request,"group added successfully")
+    else:
+        form=UserGroupForm()
+    return render(request,'myapp/group.html',{'form':form})
+
 
 
 #------------------------------------category--------------------------------------
 @login_required(login_url='myapp:login')
-@allowed_users(allowed_roles=['admin'])
 def category_list(request):
-    categories = Categories.objects.all()    #retrive all categories
+    # categories=Categories.objects.all()
+    #gave this error UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list:
+    # <class 'myapp.models.Categories'> QuerySet.
+
+    categories = Categories.objects.get_queryset().order_by('id')   #retrive all categories
+    page=request.GET.get('page',1) # if page doesn't exist it will fallback to default value 1 which is what get intends to do
+
+    paginator=Paginator(categories,3)  # telling how many  category objects on each page
+    try:
+        categories=paginator.page(page)
+    except PageNotAnInteger:
+        categories=paginator.page(1)
+    except EmptyPage:
+        categories=paginator.page(paginator.num_pages)
+
+    if request.method=='POST':
+        page_n=request.POST.get('page_n',None)  # getting page number
+
+        categories=paginator.page(page_n).object_list
+
+        # categories=serializers.serialize('json',categories1)
+        # categories=list(paginator.page(page_n)).object_list.values('id','name','parent','Description',
+        #                                                            'created_by','created_date','modify_by',
+        #                                                            'modified_date','status')
+        # return JsonResponse(categories,content_type='application/json',safe=False)
+
     context = {'categories': categories}
     return render(request, 'myapp/categories_list.html', context)
 
@@ -223,7 +285,20 @@ def delete_category(request, pk):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def Product_Attribute(request):
-    product_attributes = ProductAttribute.objects.all()
+    product_attributes = ProductAttribute.objects.order_by('id')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(product_attributes, 4)
+    try:
+        product_attributes = paginator.page(page)
+    except PageNotAnInteger:
+        product_attributes = paginator.page(1)
+    except EmptyPage:
+        product_attributes = paginator.page(paginator.num_pages)
+
+    if request.method == 'POST':
+        page_n = request.POST.get('page_n', None)  # getting page number
+
+        product_attributes = paginator.page(page_n).object_list
 
     return render(request, 'attribute/product_attribute.html', {'product_attributes': product_attributes})
 
@@ -277,7 +352,20 @@ def Product_Attribute_Delete(request,id):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def Product_Attribute_Value(request):
-    product_attribute_values = ProductAttributeValue.objects.all()
+    product_attribute_values = ProductAttributeValue.objects.order_by('id')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(product_attribute_values, 4)
+    try:
+        product_attribute_values = paginator.page(page)
+    except PageNotAnInteger:
+        product_attribute_values = paginator.page(1)
+    except EmptyPage:
+        product_attribute_values = paginator.page(paginator.num_pages)
+
+    if request.method == 'POST':
+        page_n = request.POST.get('page_n', None)  # getting page number
+
+        product_attribute_values = paginator.page(page_n).object_list
     return render(request, 'attribute/product_att_value.html', {'product_attribute_values': product_attribute_values})
 
 @login_required(login_url='myapp:login')
@@ -300,7 +388,7 @@ def Product_Attribute_Value_Add(request):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def Product_Attribute_Value_Edit(request,id):
-    instance=get_object_or_404(ProductAttributeValue,id=id)
+    instance=get_object_or_404(ProductAttributeValue,id=id)   # we want form with data of a speciifc id
     if request.method=="POST":
         form = ProductAttributeValueForm(request.POST, instance=instance)
         if form.is_valid():
@@ -318,7 +406,7 @@ def Product_Attribute_Value_Edit(request,id):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def Product_Attribute_Value_Delete(request,id):
-    data = get_object_or_404(ProductAttribute, id=id)
+    data = get_object_or_404(ProductAttribute, id=id)  # or ProductAttribute.objects.get(id=id)
     try:
         data.delete()
         messages.success(request, "attribute value deleted succesfully")
@@ -331,7 +419,20 @@ def Product_Attribute_Value_Delete(request,id):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def product_list(request):
-    products = Product.objects.all()  # retrive all categories
+    products = Product.objects.order_by('id')  # retrive all products
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 5)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    if request.method == 'POST':
+        page_n = request.POST.get('page_n', None)  # getting page number
+
+        products = paginator.page(page_n).object_list
     context = {'products': products}
     return render(request, 'myapp/products_list.html', context)
 
@@ -466,7 +567,20 @@ def delete_product(request, id):
 @login_required(login_url='myapp:login')
 @allowed_users(allowed_roles=['admin'])
 def banner_list(request):
-    banner=Banner.objects.all()
+    banner=Banner.objects.order_by('id')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(banner, 3)
+    try:
+        banner = paginator.page(page)
+    except PageNotAnInteger:
+        banner = paginator.page(1)
+    except EmptyPage:
+        banner = paginator.page(paginator.num_pages)
+
+    if request.method == 'POST':
+        page_n = request.POST.get('page_n', None)  # getting page number
+
+        banner = paginator.page(page_n).object_list
     return render(request,'myapp/banner.html',{'banners':banner})
 
 @login_required(login_url='myapp:login')

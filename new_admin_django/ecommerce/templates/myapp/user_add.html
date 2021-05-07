@@ -18,7 +18,7 @@
 
 <div class="col-md-12">
     <div class="card card-primary">
-      <form method="post" action="{% url 'myapp:UserAdd'%}">
+      <form method="post" action="{% url 'myapp:UserAdd'%}" nonvalidate>
            <div class="card-body">
                {% csrf_token %}
 

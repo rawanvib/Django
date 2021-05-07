@@ -48,6 +48,12 @@
                        </p>
                      </a>
                 </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                 <a href="{% url 'myapp:group' %}" class="nav-link {% if request.resolver_match.url_name == "group" %}active{% endif %}">
+                     <i class="fas fa-users-cog" aria-hidden="true"></i>
+                     <p>Group</p>
+                 </a>
+             </li>
             <li class="nav-item has-treeview  {% if request.resolver_match.url_name == "ProductList" %}menu-open{% endif %}
             {% if request.resolver_match.url_name == "ProductAttribute" %}menu-open{% endif %}
             {% if request.resolver_match.url_name == "ProductAttributeValue" %}menu-open{% endif %}">

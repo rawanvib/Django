@@ -58,7 +58,8 @@
                 <tr>
                   <th>id</th>
                   <th>name</th>
-                  <th>parent</th>
+                  <th>parent
+                    <th>Description</th>
                   <th>created by</th>
                   <th>created date</th>
                   <th>modify by</th>
@@ -72,8 +73,9 @@
 	                {%for category in categories %}
 		                <tr>
 		                  <td>{{ category.id }}</td>
-		                  <td>{{ category.name | upper }}</td>
+		                  <td>{{ category.name | title }}</td>
                             <td>{{ category.parent }}</td>
+                            <td>{{ category.description }}</td>
 		                  <td>{{ category.created_by }}</td>
 		                  <td>{{ category.created_date }}</td>
 		                  <td>{{ category.modify_by }}</td>
@@ -128,11 +130,14 @@
                 {% if categories.has_other_pages %}
                   <ul class="pagination justify-content-end">
 
+<!--                      previous block in nav bar-->
+<!--enabling previous block if there is any-->
                     {% if categories.has_previous %}
                       <li class="page-item">
                           <a class="page-link" href="?page={{ categories.previous_page_number }}" tabindex="-1">Previous</a>
                       </li>
                     {% else %}
+<!--disabling previous block -->
                       <li class="page-item disabled">
                           <span class="page-link">Previous</span>
                       </li>
@@ -146,9 +151,13 @@
                             {% endif %}
 
                         {% endfor %}
+
+                      <!--next block in nav bar-->
+                        <!--enabling next block if there is any-->
                     {% if categories.has_next %}
                       <li class = "page-item"><a  class="page-link  " href="?page={{ categories.next_page_number }}">Next</a></li>
                     {% else %}
+                      <!--disabling next block-->
                       <li class = "page-item disabled"><span class="page-link">Next</span></li>
                     {% endif %}
 

@@ -96,6 +96,37 @@
 	                {%endfor%}
 	            </tbody>
 	          </table>
+				<nav aria-label="Page navigation example">
+                {% if banners.has_other_pages %}
+                  <ul class="pagination justify-content-end">
+
+                    {% if banners.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ banners.previous_page_number }}" tabindex="-1">Previous</a>
+                      </li>
+                    {% else %}
+                      <li class="page-item disabled">
+                          <span class="page-link">Previous</span>
+                      </li>
+                    {% endif %}
+
+                        {% for i in banners.paginator.page_range %}
+                            {% if banners.number == i %}
+                                <li class="page-item active"><a class="page-link" href="?page={{ i }}" data-page = "{{ i }}" > {{ i }} </a></li>
+                            {% else %}
+                                <li class="page-item "><a class="page-link get-page" data-action="{{ i }}"  >{{ i }}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+                    {% if banners.has_next %}
+                      <li class = "page-item"><a  class="page-link  " href="?page={{ banners.next_page_number }}">Next</a></li>
+                    {% else %}
+                      <li class = "page-item disabled"><span class="page-link">Next</span></li>
+                    {% endif %}
+
+                  </ul>
+                {% endif %}
+                </nav>
 	        </div>
 	        <!-- /.card-body -->
 	      </div>

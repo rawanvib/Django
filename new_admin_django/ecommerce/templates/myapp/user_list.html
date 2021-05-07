@@ -43,6 +43,7 @@
 					<th>id</th>
 	              <th>Email</th>
 	              <th>full name</th>
+					<th>Wishlist</th>
 	              <th>date joined</th>
 				  <th>is active</th>
 				  <th>Edit/Delete</th>
@@ -56,6 +57,8 @@
                             <td>{{user.id}}</td>
 		                  <td>{{ user.email }}</td>
 		                  <td>{{ user.get_full_name }}</td>
+
+							<td>{% for list in user.userwishlist.product %}<li>{{ list }}</li>{% endfor %}</td>
 						  <td>{{ user.date_joined}}</td>
 
 		                  <td>{% if  user.is_active == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}
@@ -94,6 +97,44 @@
 	                {%endfor%}
 	            </tbody>
 	          </table>
+				<nav aria-label="Page navigation example">
+                {% if users.has_other_pages %}
+                  <ul class="pagination justify-content-end">
+
+<!--                      previous block in nav bar-->
+<!--enabling previous block if there is any-->
+                    {% if users.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ users.previous_page_number }}" tabindex="-1">Previous</a>
+                      </li>
+                    {% else %}
+<!--disabling previous block -->
+                      <li class="page-item disabled">
+                          <span class="page-link">Previous</span>
+                      </li>
+                    {% endif %}
+
+                        {% for i in users.paginator.page_range %}
+                            {% if users.number == i %}
+                                <li class="page-item active"><a class="page-link" href="?page={{ i }}" data-page = "{{ i }}" > {{ i }} </a></li>
+                            {% else %}
+                                <li class="page-item "><a class="page-link get-page" data-action="{{ i }}"  >{{ i }}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+
+                      <!--next block in nav bar-->
+                        <!--enabling next block if there is any-->
+                    {% if users.has_next %}
+                      <li class = "page-item"><a  class="page-link  " href="?page={{ users.next_page_number }}">Next</a></li>
+                    {% else %}
+                      <!--disabling next block-->
+                      <li class = "page-item disabled"><span class="page-link">Next</span></li>
+                    {% endif %}
+
+                  </ul>
+                {% endif %}
+                </nav>
 	        </div>
 	        <!-- /.card-body -->
 	      </div>

@@ -4,27 +4,58 @@ Login page
 {% endblock %}
 
 {% block wrapper %}
+
 <section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
-
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="" method="POST">
-							{% csrf_token %}
-							<input type="email" placeholder="Your email" name="email_login"/>
-							<input type="password" placeholder="password" name="password"/>
-							<span>
-								<input type="checkbox" class="checkbox">
-								Keep me signed in
-							</span>
+						<form method="POST" action="{% url 'website:login_view'%}">
+                            {% csrf_token %}
+							<input type="text" name="username" placeholder="username" />
+							<input type="password" name="password" placeholder="password" />
+<!--							<span>-->
+<!--								<input type="checkbox" class="checkbox">-->
+<!--								Keep me signed in-->
+<!--							</span>-->
+                            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
+					      <i class=""></i> Forget Password
 					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Signup!</h2>
+						<form method="POST" action="{% url 'website:register_view'%}">
+							{% csrf_token %}
+							{% for field in form %}
+									<div class=" form-group is-invalid" >
+										{{ field.label_tags}}
+										{{ field }}
+										{% if field.errors %}
+										<div >
+											<strong id="passwordHelp" class="text-danger">
+												{{ field.errors }}
+											</strong>
+										</div>
+										{% endif %}
+										</div>
+								{% endfor %}
+							<button type="submit" class="btn btn-default">Signup</button>
+
+
+						</form>
+
+					</div><!--/sign up form-->
 
 				</div>
 			</div>
 		</div>
 	</section><!--/form-->
+
 {% endblock %}

@@ -1,9 +1,10 @@
 {% load static %}
-<div class="left-sidebar">
+<div class="col-sm-3">
+	<div class="left-sidebar">
 
 						<h2>Category</h2>
 
-						{% block category_list %}
+
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -110,10 +111,10 @@
 								</div>
 							</div>
 						</div><!--/category-products-->
-						{% endblock %}
 
 
-						{% block brands %}
+
+
 						<div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
 							<div class="brands-name">
@@ -128,9 +129,9 @@
 								</ul>
 							</div>
 						</div><!--/brands_products-->
-						{% endblock %}
 
-						{% block price_range %}
+
+
 						<div class="price-range"><!--price-range-->
 							<h2>Price Range</h2>
 							<div class="well text-center">
@@ -138,10 +139,11 @@
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div><!--/price-range-->
-						{% endblock %}
+
 
 
 						<div class="shipping text-center"><!--shipping-->
 							<img src="{% static 'images/home/shipping.jpg' %}" alt="" />
 						</div><!--/shipping-->
+	</div>
 </div>

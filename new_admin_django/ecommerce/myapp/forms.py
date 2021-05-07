@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
+from django.contrib.auth.models import Group, Permission
+from django.contrib.admin.widgets import FilteredSelectMultiple
 from .models import Categories, Product, ProductImage, ProductAttribute,ProductAttributeValue, ProductMeta,ProductAttributeAssociation, Banner
 
 class UserForm(UserCreationForm):
@@ -28,7 +30,7 @@ class UserForm(UserCreationForm):
 
 
 class UserUpdateForm(UserChangeForm):
-
+    password=None
     class Meta:
         User = get_user_model()
         model = User
@@ -45,26 +47,31 @@ class UserUpdateForm(UserChangeForm):
         self.fields['groups'].widget.attrs['class'] = 'form-control'
 
 
-# class RegisterForm(UserCreationForm):
-#
-#     class Meta:
-#         User = get_user_model()
-#         model = User
-#         fields = ('email','first_name','last_name','password1','password2',)
-#
-#     def __init__(self, *args, **kwargs):
-#         super(RegisterForm, self).__init__(*args, **kwargs)
-#         self.fields['email'].widget.attrs['class'] = 'form-control'
-#         self.fields['email'].widget.attrs['placeholder'] = 'email'
-#         self.fields['first_name'].widget.attrs['class'] = 'form-control'
-#         self.fields['first_name'].widget.attrs['placeholder'] = 'first name'
-#         self.fields['last_name'].widget.attrs['class'] = 'form-control'
-#         self.fields['last_name'].widget.attrs['placeholder'] = 'last name'
-#         self.fields['password1'].widget.attrs['class'] = 'form-control'
-#         self.fields['password1'].widget.attrs['placeholder'] = 'password'
-#         self.fields['password2'].widget.attrs['class'] = 'form-control'
-#         self.fields['password2'].widget.attrs['placeholder'] = 'confirm password'
+class RegisterForm(UserCreationForm):
 
+    class Meta:
+        User = get_user_model()
+        model = User
+        fields = ('email','first_name','last_name','password1','password2')
+
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+        self.fields['email'].widget.attrs['class'] = 'form-control'
+        self.fields['email'].widget.attrs['placeholder'] = 'email'
+        self.fields['first_name'].widget.attrs['class'] = 'form-control'
+        self.fields['first_name'].widget.attrs['placeholder'] = 'first name'
+        self.fields['last_name'].widget.attrs['class'] = 'form-control'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'last name'
+        self.fields['password1'].widget.attrs['class'] = 'form-control'
+        self.fields['password1'].widget.attrs['placeholder'] = 'password'
+        self.fields['password2'].widget.attrs['class'] = 'form-control'
+        self.fields['password2'].widget.attrs['placeholder'] = 'confirm password'
+
+class CustomerProfileChangeForm(UserChangeForm):
+    class Meta:
+        User=get_user_model()
+        model=User
+        fields='__all__'
 
 # class ChangeDetailForm(forms.ModelForm):
 #
@@ -101,7 +108,13 @@ class OldPassForm(forms.Form):
         self.fields['confirm_password'].widget.attrs['class'] = 'form-control'
         self.fields['confirm_password'].widget.attrs['placeholder'] = 'new_password'
 
-
+class UserGroupForm(ModelForm):
+    class Meta:
+        model = Group
+        fields = '__all__'
+        widgets = {
+            'permissions': FilteredSelectMultiple("Permission", False, attrs={'rows': '2'}),
+        }
 
 class CategoryForm(ModelForm):
     class Meta:

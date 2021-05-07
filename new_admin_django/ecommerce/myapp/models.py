@@ -1,5 +1,5 @@
 from datetime import date, datetime
-
+from django.utils import timezone
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -32,6 +32,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 		"""
 		full_name='%s %s' % (self.first_name, self.last_name)
 		return full_name.strip()
+
 
 
 
@@ -83,7 +84,7 @@ class Product(models.Model):
 
 	@property
 	def is_new(self):
-		time_between_insertion = date.today() - self.created_date
+		time_between_insertion = timezone.now() - self.created_date
 
 		if time_between_insertion.days > 15:
 			return False
@@ -152,6 +153,11 @@ class ProductImage(models.Model):
 	created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='product_image_created_by',default='', null=True, blank=True)
 	modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, related_name='product_image_modify_by',default='', null=True, blank=True)
 
+	class meta:
+		db_table = 'product_image'
+		verbose_name = 'product image'
+		verbose_name_plural = 'product images'
+
 	def __unicode__(self):
 		return self.name
 
@@ -176,3 +182,19 @@ class Banner(models.Model):
 								   related_name='banner_uploaded_by', default='', null=True, blank=True)
 	modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
 									related_name='banner_modified_by', default='', null=True, blank=True)
+
+
+# ____________________________________User wish list_________________________________#
+class UserWishlist(models.Model):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	added_date = models.DateTimeField(auto_now_add=True)
+
+
+	class Meta:
+		db_table = 'user_wishlist'
+		verbose_name = 'wishlist'
+		verbose_name_plural = 'Wishlists'
+
+	def __str__(self):
+		return self.product.name

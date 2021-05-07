@@ -63,12 +63,12 @@
 							<td>{{product.special_price_from}}</td>
 							<td>{{product.special_price_to}}</td>
                           	<td>{{product.quantity}}</td>
-							<td>{{product.title}}</td>
+
 							<td>{% if product.status == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}
 							<i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>
 <!--		                  <td>{% if  user.is_active == True %}<i class="fa fa-check" aria-hidden="true"></i>{% else %}-->
 <!--                          <i class="fa fa-times" aria-hidden="true"></i>{% endif %}</td>-->
-
+							<td>{{product.product_meta.title}}</td>
 						  <td>
 							   <a href="{% url 'myapp:ProductEdit' product.id %}" class="btn btn-primary a-btn-slide-text">
 								   <i class="fa fa-edit" aria-hidden="true"></i>
@@ -102,6 +102,44 @@
 	                {%endfor%}
 	            </tbody>
 	          </table>
+				<nav aria-label="Page navigation example">
+                {% if products.has_other_pages %}
+                  <ul class="pagination justify-content-end">
+
+<!--                      previous block in nav bar-->
+<!--enabling previous block if there is any-->
+                    {% if products.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ products.previous_page_number }}" tabindex="-1">Previous</a>
+                      </li>
+                    {% else %}
+<!--disabling previous block -->
+                      <li class="page-item disabled">
+                          <span class="page-link">Previous</span>
+                      </li>
+                    {% endif %}
+
+                        {% for i in products.paginator.page_range %}
+                            {% if products.number == i %}
+                                <li class="page-item active"><a class="page-link" href="?page={{ i }}" data-page = "{{ i }}" > {{ i }} </a></li>
+                            {% else %}
+                                <li class="page-item "><a class="page-link get-page" data-action="{{ i }}"  >{{ i }}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+
+                      <!--next block in nav bar-->
+                        <!--enabling next block if there is any-->
+                    {% if products.has_next %}
+                      <li class = "page-item"><a  class="page-link  " href="?page={{ products.next_page_number }}">Next</a></li>
+                    {% else %}
+                      <!--disabling next block-->
+                      <li class = "page-item disabled"><span class="page-link">Next</span></li>
+                    {% endif %}
+
+                  </ul>
+                {% endif %}
+                </nav>
 	        </div>
 	        <!-- /.card-body -->
 	      </div>

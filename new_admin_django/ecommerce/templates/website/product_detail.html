@@ -1,0 +1,14 @@
+{% extends 'website/base_website.html' %}
+{% load static %}
+
+{% block title %}
+{{block.super}}
+{% endblock %}
+
+{% block wrapper %}
+{% if products %}
+{% for pro in product %}
+  {{pro.price}}
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -118,12 +118,12 @@
               </table>
                 <br>
                 <nav aria-label="Page navigation example">
-                {% if categories.has_other_pages %}
+                {% if product_attributes.has_other_pages %}
                   <ul class="pagination justify-content-end">
 
-                    {% if categories.has_previous %}
+                    {% if product_attributes.has_previous %}
                       <li class="page-item">
-                          <a class="page-link" href="?page={{ categories.previous_page_number }}" tabindex="-1">Previous</a>
+                          <a class="page-link" href="?page={{ product_attributes.previous_page_number }}" tabindex="-1">Previous</a>
                       </li>
                     {% else %}
                       <li class="page-item disabled">
@@ -131,16 +131,16 @@
                       </li>
                     {% endif %}
 
-                        {% for i in categories.paginator.page_range %}
-                            {% if categories.number == i %}
+                        {% for i in product_attributes.paginator.page_range %}
+                            {% if product_attributes.number == i %}
                                 <li class="page-item active"><a class="page-link" href="?page={{ i }}" data-page = "{{ i }}" > {{ i }} </a></li>
                             {% else %}
                                 <li class="page-item "><a class="page-link get-page" data-action="{{ i }}"  >{{ i }}</a></li>
                             {% endif %}
 
                         {% endfor %}
-                    {% if categories.has_next %}
-                      <li class = "page-item"><a  class="page-link  " href="?page={{ categories.next_page_number }}">Next</a></li>
+                    {% if product_attributes.has_next %}
+                      <li class = "page-item"><a  class="page-link  " href="?page={{ product_attributes.next_page_number }}">Next</a></li>
                     {% else %}
                       <li class = "page-item disabled"><span class="page-link">Next</span></li>
                     {% endif %}
