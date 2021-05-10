@@ -36,7 +36,7 @@
 						<ul>
 
 							{% for category in categories %}
-									<li class="tm-paging-item"><a href="{% url 'store:category_list' category.pk %}" class="tm-paging-link">{{category.name}}</a></li>
+									<li class="tm-paging-item"><a href="/store/?category={{category.id}}" class="list-group-item list-group-item-action">{{category.name}}</a></li>
 							{% endfor %}
 
 						</ul>

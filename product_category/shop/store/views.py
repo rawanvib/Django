@@ -5,20 +5,27 @@ from .models import Product, Category
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def home_page_view(request,pk=None):
+def home_page_view(request):
+
     categories=Category.objects.all()
-    products = Product.objects.all()
+    products = None
+    category_id=request.GET.get('category')
+
+    if category_id:
+        products=Product.get_all_products_by_category_id(category_id)
+    else:
+        products=Product.get_all_products()
 
     data={}
     data['products']=products
     data['categories']=categories
     return render(request, 'store/index.html',data)
 
-def category_list(request,pk):
-    category = Category.objects.get(pk=pk)
-    products = Product.objects.filter(category=category)
-    categories=Category.objects.all()
-    return render(request, 'store/index.html', {'products': products, 'categories':categories})
+# def category_list(request,pk):
+#     category = Category.objects.get(pk=pk)
+#     products = Product.objects.filter(category=category)
+#     categories=Category.objects.all()
+#     return render(request, 'store/index.html', {'products': products, 'categories':categories})
 
 
 def search_dish(request):
