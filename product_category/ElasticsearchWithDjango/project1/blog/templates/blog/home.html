@@ -1,0 +1,19 @@
+{% extends 'search/search.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    {% if data %}
+    {% for item in data  %}
+    <div class="row">
+            <div class="col-sm-4">
+                    <h1>{{item.title}}</h1>
+                    <h2>{{item.description}}</h2>
+                <img src="/media/{{item.image}}" alt="">
+                <h3>{{image.name}}</h3>
+            </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

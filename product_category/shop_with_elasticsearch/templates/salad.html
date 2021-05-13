@@ -1,0 +1,16 @@
+{% load static %}
+
+<div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
+  <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+    <figure>
+      {% for s in salad %}
+      <a href="{% url 'app:show_detail_salad' s.pk %}"><img src="{{MEDIA_URL}}.{{s.image.url}}" alt="Image" class="img tm-gallery-img" /></a>
+      <figcaption>
+        <h4 class="tm-gallery-title">{{s.title}}</h4>
+        <p class="tm-gallery-description">{{s.description}}</p>
+        <p class="tm-gallery-price">${{s.price}}</p>
+      </figcaption>
+      {% endfor %}
+    </figure>
+  </article>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search using elasticsearch</title>
+</head>
+<body>
+{% block search %}
+<h1>Elastic Search with django</h1>
+<form method="get" action="{% url 'search' %}">
+    <input type="text" id="q" name="q" placeholder="your search....">
+</form>
+
+{% for item in products %}
+{{item.id}}
+{{item.title}}
+{{item.body}}
+{{item.description}}
+<img src="{{ item.image }}" alt="image field">
+{{item.image}}
+
+<br>
+
+{% endfor %}
+{% endblock %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

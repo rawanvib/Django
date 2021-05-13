@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Detail page</title>
+    <style media="screen">
+    body{
+      background: #c3dbca;
+    }
+    </style>
+
+  </head>
+  <body>
+    {% include 'header.html'%}
+      <h1>{{product.name}}</h1>
+      <h2>{{product.description}}</h2>
+      <h3>${{product.price}}</h3>
+      <img src="{{ product.imageURL }}" height="300px" width="500px">
+
+
+  </body>
+</html>

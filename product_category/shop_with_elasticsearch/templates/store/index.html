@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple House Template</title>
+		<style media="screen">
+			.imgchange{
+				height:300px;
+				width:250px;
+			}
+		</style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+</head>
+<body>
+		<main>
+			{% include 'header.html'%}
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">Welcome to Simple House</h2>
+			</header>
+			<div class="container" >
+ 			{%if messages %}
+
+			 {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible alert-fixed" role="alert" >
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  {{ message }}
+                </div>
+              {% endfor %}
+
+			{% endif %}
+
+</div>
+
+			<div class="tm-paging-links">
+				<nav>
+						<ul>
+
+							{% for category in categories %}
+									<li class="tm-paging-item"><a href="/store/?category={{category.id}}" class="list-group-item list-group-item-action">{{category.name}}</a></li>
+							{% endfor %}
+
+						</ul>
+
+				</nav>
+
+			</div>
+			{% block upper %}
+
+			{% endblock %}
+			<br>
+
+
+			<!-- Gallery -->
+
+			{% include 'pizza.html' %}
+
+				<!-- <div class="row tm-gallery">
+				  <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+				    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+				      <figure>
+				        {% for item in products %}
+				       	<img src="{% if request.resolver_match.url_name == "search_dish" %}{{item.image}}{% else %}{{item.imageURL}}{% endif %}" alt="{% if request.resolver_match.url_name == "search_dish" %}{{item.image}}{% else %}{{item.imageURL}}{% endif %}" class="img tm-gallery-img" />
+				        <figcaption>
+				          <h4 class="tm-gallery-title">{{item.name}}</h4>
+				          <p class="tm-gallery-description">{{item.description}}</p>
+				          <p class="tm-gallery-price">${{item.price}}</p>
+				        </figcaption>
+				        {% endfor %}
+				      </figure>
+				    </article>
+				</div>
+			</div> -->
+
+
+
+				<!-- gallery page 1 -->
+
+
+				<!-- gallery page 2 -->
+
+				 <!-- gallery page 2 -->
+
+				<!-- gallery page 3 -->
+
+				<!-- gallery page 3 -->
+			<!-- </div> -->
+
+		</main>
+
+
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/parallax.min.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</body>
+</html>

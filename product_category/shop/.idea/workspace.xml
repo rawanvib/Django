@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18607a52-d596-442d-85b7-4f8bad8dd108" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/.idea/ElasticsearchWithDjango.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/project1/static/product_images/07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/project1/static/product_images/08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/project1/static/product_images/about-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/project1/static/product_images/simple-house-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ElasticsearchWithDjango/project1/static/product_images/simple-house-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shop_with_elasticsearch/.idea/shop_with_elasticsearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css practice/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css practice/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css practice/style1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css practice/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css practice/thankyou.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/download.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/navigation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/style1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css_bootstrap_ practice/thankyou.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/destinations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/news.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/App/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/autocomplete.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/changelists.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/forms.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/nav_sidebar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/responsive_rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/vendor/select2/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/vendor/select2/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/css/widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/fonts/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/fonts/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/calendar-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-addlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-alert.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-changelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-deletelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-no.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-unknown-alt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-unknown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-viewlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/icon-yes.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/inline-delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/selector-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/sorting-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/tooltag-add.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/img/tooltag-arrowright.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/SelectBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/SelectFilter2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/autocomplete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/cancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/change_form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/inlines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/jquery.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/nav_sidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/popup_response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/prepopulate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/prepopulate_init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/urlify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/select2.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/about.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/about_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/around.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/beach.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/boat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/camera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/contact.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destination_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/destinations.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/elements.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/footer_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/home_slider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/intro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/island.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/latest_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/latest_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/latest_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/mountain.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/news_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/sign.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/suitcase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/team_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/team_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/team_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/team_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/testimonials.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/travello.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/trekking.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/wallet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/images/why_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/destinations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/elements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/js/news.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/Isotope/isotope.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/OwlCarousel2-2.2.1/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/easing/easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/greensock/ScrollToPlugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/greensock/TimelineMax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/greensock/TweenMax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/greensock/animation.gsap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/parallax-js-master/parallax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/progressbar/progressbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/scrollTo/jquery.scrollTo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/plugins/scrollmagic/ScrollMagic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/about.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/about_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/bootstrap4/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/bootstrap4/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/bootstrap4/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/contact.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/contact_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/destinations.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/destinations_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/elements.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/elements_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/main_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/news.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/news_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/assets/styles/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/about.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/about_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/around.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/beach.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/boat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/camera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/contact.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destination_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/destinations.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/elements.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/footer_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/home_slider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/intro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/island.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/latest_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/latest_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/latest_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/mountain.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/news_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/sign.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/suitcase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/team_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/team_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/team_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/team_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/testimonials.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/travello.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/trekking.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/wallet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/images/why_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/destinations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/elements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/js/news.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/Isotope/isotope.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/OwlCarousel2-2.2.1/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/easing/easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/greensock/ScrollToPlugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/greensock/TimelineMax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/greensock/TweenMax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/greensock/animation.gsap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/parallax-js-master/parallax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/progressbar/progressbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/scrollTo/jquery.scrollTo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/plugins/scrollmagic/ScrollMagic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/about.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/about_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/bootstrap4/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/bootstrap4/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/bootstrap4/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/contact.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/contact_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/destinations.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/destinations_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/elements.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/elements_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/main_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/news.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/news_responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/static_files/styles/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/travello/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/travello/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/travello/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/travello/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dynamic page without database/travello/travello/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html practice" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/.idea/new_admin_django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/.idea/new_admin_django.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/myapp/products_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/myapp/products_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/side_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/side_navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/templates/website/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new_admin_django/ecommerce/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../new_admin_django/ecommerce/website/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pizza.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pizza.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/templates/app/addtocart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/templates/app/addtocart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/templates/app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/templates/app/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/templates/app/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/templates/app/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/app/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/app/templates/app/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/shopeasy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/shopeasy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../shopeasy/shopeasy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../shopeasy/shopeasy/urls.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1sOCu58BpxLlCAiG34nOrI6bL98" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18607a52-d596-442d-85b7-4f8bad8dd108" name="Default Changelist" comment="" />
+      <created>1620734468273</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620734468273</updated>
+    </task>
+    <servers />
+  </component>
+</project>
